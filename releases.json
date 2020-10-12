@@ -67,12 +67,12 @@
     "link": "https://dappnode.github.io/sdk-publish/?r=prysm-medalla-beacon-chain.dnp.dappnode.eth&v=1.0.8&h=%2Fipfs%2FQmaDo1KhAJmfhu8MYxr5CdDtc7PA5evJTikKPVeKPnAhf2"
   },
   "1.0.9": {
-    "hash": "/ipfs/QmWktvuWnzFpSQ33Mz3fdCwQieBX8wSRbRqRP4Ais3ZzGR",
+    "hash": "/ipfs/QmX2mCe5baMk3shc9XYEoRLoThTokgQaswDHnAwaWhJ5XU",
     "type": "directory",
     "uploadedTo": {
-      "remote": "Tue, 06 Oct 2020 00:22:29 GMT"
+      "remote": "Mon, 12 Oct 2020 12:20:36 GMT"
     },
-    "link": "https://dappnode.github.io/sdk-publish/?r=prysm-medalla-beacon-chain.dnp.dappnode.eth&v=1.0.9&h=%2Fipfs%2FQmWktvuWnzFpSQ33Mz3fdCwQieBX8wSRbRqRP4Ais3ZzGR"
+    "link": "https://dappnode.github.io/sdk-publish/?r=prysm-medalla-beacon-chain.dnp.dappnode.eth&v=1.0.9&h=%2Fipfs%2FQmX2mCe5baMk3shc9XYEoRLoThTokgQaswDHnAwaWhJ5XU"
   },
   "1.0.11": {
     "hash": "/ipfs/QmVhyFxZPKxAW6TBiyC4KBr5G7MZbo1qT2nQnjLJEDTxNm",
