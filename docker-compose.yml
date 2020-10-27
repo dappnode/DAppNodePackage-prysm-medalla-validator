@@ -7,15 +7,13 @@ services:
       args:
         UPSTREAM_VERSION: v1.0.0-beta.0
     volumes:
-      - "data:/data"
-    ports:
-      - "13000"
-      - "12000"
-      - "7500:7500"
+      - "data:/root/.eth2"
+      - "validators:/root/.eth2validators"
     restart: always
     environment:
-      BEACON_RPC_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:3500"
+      BEACON_RPC_PROVIDER: "prysm-medalla-beacon-chain.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
 volumes:
   data: {}
+  validators: {}

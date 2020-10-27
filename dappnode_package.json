@@ -29,6 +29,6 @@
     "prysm": "https://prylabs.net"
   },
   "dependencies": {
-    "goerli-geth.dnp.dappnode.eth": "latest"
+    "prysm-medalla-beacon-chain.dnp.dappnode.eth": "latest"
   }
 }

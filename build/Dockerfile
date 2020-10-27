@@ -27,15 +27,16 @@ RUN validator --version
 
 ENTRYPOINT [ "sh", "-c", "exec validator \
     --medalla \
-    --datadir=/data \
-    --log-file=/data/validator.log \
+    --datadir=/root/.eth2 \
+    --log-file=/root/.eth2/validator.log \
     --rpc-host 0.0.0.0 \
     --grpc-gateway-host 0.0.0.0 \
     --monitoring-host 0.0.0.0 \
     --beacon-rpc-provider=$BEACON_RPC_PROVIDER \
-    --wallet-dir=$AAAAAAAAA \
+    --wallet-dir=/root/.eth2validators \
     --graffiti=$GRAFFITI \
     --web \
+    --grpc-gateway-port 80 \
     --accept-terms-of-use \
     $EXTRA_OPTS" \
 ]
