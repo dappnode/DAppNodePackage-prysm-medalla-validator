@@ -2,10 +2,11 @@
   "name": "prysm-medalla-validator.dnp.dappnode.eth",
   "version": "1.0.9",
   "upstreamVersion": "v1.0.0-beta.0",
+  "upstreamRepo": "prysmaticlabs/prysm",
+  "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Prysm Medalla ETH2.0 Validator",
   "description": "Prysm: a Go implementation of the Ethereum 2.0 Serenity protocol and open source project created by Prysmatic Labs. Validator client.",
   "type": "service",
-  "architectures": ["linux/amd64", "linux/arm64"],
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"

@@ -5,15 +5,17 @@ services:
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.0.0-alpha.27
+        UPSTREAM_VERSION: v1.0.0-beta.0
     volumes:
       - "data:/data"
     ports:
       - "13000"
       - "12000"
+      - "7500:7500"
     restart: always
     environment:
-      - "HTTP_WEB3PROVIDER=http://goerli-geth.dappnode:8545"
-      - EXTRA_OPTS
+      BEACON_RPC_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:3500"
+      GRAFFITI: validating_from_DAppNode
+      EXTRA_OPTS: ""
 volumes:
   data: {}
