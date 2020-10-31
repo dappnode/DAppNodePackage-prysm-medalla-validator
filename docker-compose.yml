@@ -9,11 +9,16 @@ services:
     volumes:
       - "data:/root/.eth2"
       - "validators:/root/.eth2validators"
+      - "wallet-passwords:/root/.eth2wallets"
+    ports:
+      - "8000:80"
     restart: always
     environment:
-      BEACON_RPC_PROVIDER: "prysm-medalla-beacon-chain.dappnode:3500"
+      BEACON_RPC_PROVIDER: "prysm-medalla-beacon-chain.dappnode:4000"
+      BEACON_RPC_GATEWAY_PROVIDER: "prysm-medalla-beacon-chain.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
 volumes:
   data: {}
   validators: {}
+  wallet-passwords: {}
