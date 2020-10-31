@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   prysm-medalla-validator.dnp.dappnode.eth:
-    image: 'prysm-medalla-validator.dnp.dappnode.eth:1.0.9'
+    image: 'prysm-medalla-validator.dnp.dappnode.eth:1.0.10'
     build:
       context: ./build
       args:
