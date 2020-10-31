@@ -1,0 +1,13 @@
+version: "2"
+fields:
+  - id: walletPassword,
+    target: 
+      type: environment
+      name: WALLET_PASSWORD
+    title: Wallet password
+    description: >-
+      Password to lock and unlock your validator accounts wallet
+    secret: true
+    pattern: "^.{8,}$"
+    patternErrorMessage: Password must be longer than 8 characters
+    required: true

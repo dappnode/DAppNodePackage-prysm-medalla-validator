@@ -1,19 +1,21 @@
 version: '3.4'
 services:
-  prysm-medalla-beacon-chain.dnp.dappnode.eth:
-    image: 'prysm-medalla-beacon-chain.dnp.dappnode.eth:1.0.9'
+  prysm-medalla-validator.dnp.dappnode.eth:
+    image: 'prysm-medalla-validator.dnp.dappnode.eth:1.0.9'
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.0.0-alpha.27
+        UPSTREAM_VERSION: v1.0.0-beta.0
     volumes:
-      - 'data:/data'
-    ports:
-      - '13000'
-      - '12000'
+      - 'data:/root/'
     restart: always
     environment:
-      - 'HTTP_WEB3PROVIDER=http://goerli-geth.dappnode:8545'
-      - EXTRA_OPTS
+      BEACON_RPC_PROVIDER: 'prysm-medalla-beacon-chain.dappnode:4000'
+      BEACON_RPC_GATEWAY_PROVIDER: 'prysm-medalla-beacon-chain.dappnode:3500'
+      GRAFFITI: validating_from_DAppNode
+      EXTRA_OPTS: ''
+      WALLET_PASSWORD: ''
 volumes:
   data: {}
+  validators: {}
+  wallet-passwords: {}

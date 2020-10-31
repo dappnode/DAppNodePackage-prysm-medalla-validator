@@ -5,14 +5,14 @@ ARG UPSTREAM_VERSION
 ENV DOWNLOAD_URL https://github.com/prysmaticlabs/prysm/releases/download
 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt update && apt install --assume-yes --no-install-recommends wget ca-certificates && \
-    wget -q $DOWNLOAD_URL/$UPSTREAM_VERSION/beacon-chain-$UPSTREAM_VERSION-linux-${TARGETARCH:-amd64} -O /usr/local/bin/beacon-chain && \
-    chmod +x  /usr/local/bin/beacon-chain
+    apt update && apt install --assume-yes --no-install-recommends wget ca-certificates
+RUN wget -q $DOWNLOAD_URL/$UPSTREAM_VERSION/validator-$UPSTREAM_VERSION-linux-${TARGETARCH:-amd64} -O /usr/local/bin/validator && \
+    chmod +x  /usr/local/bin/validator
 
 FROM debian:buster-slim
 
 #Copy binaries from build stage
-COPY --from=binary /usr/local/bin/beacon-chain /usr/local/bin/beacon-chain
+COPY --from=binary /usr/local/bin/validator /usr/local/bin/validator
 
 RUN apt update && \
     apt install -y ca-certificates file && \
@@ -21,7 +21,7 @@ RUN apt update && \
 ADD ssl /ssl/
 
 # Verify binary is in correct arch
-RUN /usr/local/bin/beacon-chain --version
+RUN /usr/local/bin/validator --version
+COPY entrypoint.sh .
 
-
-ENTRYPOINT [ "sh", "-c", "exec beacon-chain --medalla --datadir=/data --log-file=/data/beacon-chain.log --rpc-host 0.0.0.0 --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --http-web3provider=$HTTP_WEB3PROVIDER $EXTRA_OPTS" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
