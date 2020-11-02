@@ -1,20 +1,20 @@
-version: '3.4'
+version: "3.4"
 services:
   prysm-medalla-validator.dnp.dappnode.eth:
-    image: 'prysm-medalla-validator.dnp.dappnode.eth:1.0.9'
+    image: "prysm-medalla-validator.dnp.dappnode.eth:1.0.9"
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.0.0-beta.0
+        UPSTREAM_VERSION: v1.0.0-beta.1
     volumes:
-      - 'data:/root/'
+      - "data:/root/"
     restart: always
     environment:
-      BEACON_RPC_PROVIDER: 'prysm-medalla-beacon-chain.dappnode:4000'
-      BEACON_RPC_GATEWAY_PROVIDER: 'prysm-medalla-beacon-chain.dappnode:3500'
+      BEACON_RPC_PROVIDER: "prysm-medalla-beacon-chain.dappnode:4000"
+      BEACON_RPC_GATEWAY_PROVIDER: "prysm-medalla-beacon-chain.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
-      EXTRA_OPTS: ''
-      WALLET_PASSWORD: ''
+      EXTRA_OPTS: ""
+      WALLET_PASSWORD: ""
 volumes:
   data: {}
   validators: {}

@@ -1,7 +1,7 @@
 {
   "name": "prysm-medalla-validator.dnp.dappnode.eth",
   "version": "1.0.9",
-  "upstreamVersion": "v1.0.0-beta.0",
+  "upstreamVersion": "v1.0.0-beta.1",
   "upstreamRepo": "prysmaticlabs/prysm",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Prysm Medalla ETH2.0 Validator",
